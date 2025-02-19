@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <h1 id ="res"></h1>
+    <button onclick="pop()">pop</button>
+    <button onclick="push()">push</button>
+    <button onclick="slice()">slice</button>
+    <button onclick="reverse()">reverse</button>
+
+</head>
+<body></body>
+<script>
+    //      var fruits = ["mango","apple","pineapple","Banana"];
+    //       var vegitables = ["Potato","Ladyfinger","Ginger"];
+    //    //  var flag = fruits.valueOf();
+    //    //var flag = fruits.join("!");
+    //  document.write("<h1>"+ flag +"</h1>");
+    var fruits = ["mango","apple","pineapple","Banana"];
+    var demo = fruits;
+    document.getElementById('res').innerText = demo;
+    function pop(){
+        demo.pop();
+        document.getElementById('res').innerText = demo;
+    }
+    function push(){
+         var x  =  prompt("please enter a fruit","");
+        demo.push(" Orange");
+        document.getElementById('res').innerText = demo;
+    }
+
+
+function slice(){
+    var x = demo.slice(1);
+    document.getElementById('res').innerText =x;
+}
+function reverse(){
+    demo.reverse()
+    document.getElementById('res').innerText = demo;
+    
+}
+
+</script>
+</html>

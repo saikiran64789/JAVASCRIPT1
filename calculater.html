@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <input type="number" name="first" id="first" step="any" placeholder="First number" />
+
+    <select id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <input type="number" name="second" id="second" step="any" placeholder="Second number" />
+
+    <br/><br/>
+    <button onclick="cal()">Calculate</button>
+    <input type="text" id="res" readonly placeholder="Result" />
+
+    <script type="text/javascript">
+        function cal() {
+            var opr1 = document.getElementById('first').value;
+            var opr2 = document.getElementById('second').value;
+            var ope = document.getElementById('ope').value;
+
+            var res;
+            // Convert to float to handle decimal values
+            opr1 = parseFloat(opr1);
+            opr2 = parseFloat(opr2);
+
+            // Perform calculation based on selected operator
+            if (ope == '+') {
+                res = opr1 + opr2;
+            } else if (ope == '-') {
+                res = opr1 - opr2;
+            } else if (ope == '*') {
+                res = opr1 * opr2;
+            } else if (ope == '/') {
+                if (opr2 === 0) {
+                    res = "Cannot divide by zero";
+                } else {
+                    res = opr1 / opr2;
+                }
+            }
+
+            document.getElementById('res').value = res;
+        }
+    </script>
+</body>
+</html>
